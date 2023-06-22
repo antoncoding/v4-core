@@ -46,9 +46,10 @@ library Pool {
     /// @notice Thrown when trying to swap amount of 0
     error SwapAmountCannotBeZero();
 
+    // todo: fix this
     /// @notice Thrown when sqrtPriceLimitX96 on a swap has already exceeded its limit
     /// @param sqrtPriceCurrentX96 The invalid, already surpassed sqrtPriceLimitX96
-    /// @param sqrtPriceLimitX96 The invalid, already surpassed sqrtPriceLimitX96
+    /// @param sqrtPriceLimitX96 The limit
     error PriceLimitAlreadyExceeded(uint160 sqrtPriceCurrentX96, uint160 sqrtPriceLimitX96);
 
     /// @notice Thrown when sqrtPriceLimitX96 lies outside of valid tick/price range

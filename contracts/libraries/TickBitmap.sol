@@ -77,6 +77,7 @@ library TickBitmap {
                 initialized = masked != 0;
                 // overflow/underflow is possible, but prevented externally by limiting both tickSpacing and tick
                 next = initialized
+                // @note: leastSignificantBit revert if masked == 0
                     ? (compressed + 1 + int24(uint24(BitMath.leastSignificantBit(masked) - bitPos))) * tickSpacing
                     : (compressed + 1 + int24(uint24(type(uint8).max - bitPos))) * tickSpacing;
             }

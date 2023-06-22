@@ -10,7 +10,11 @@ function toBalanceDelta(int128 _amount0, int128 _amount1) pure returns (BalanceD
     /// @solidity memory-safe-assembly
     assembly {
         balanceDelta :=
-            or(shl(128, _amount0), and(0x00000000000000000000000000000000ffffffffffffffffffffffffffffffff, _amount1))
+            or(
+                shl(128, _amount0), 
+                // why and?
+                and(0x00000000000000000000000000000000ffffffffffffffffffffffffffffffff, _amount1)
+            )
     }
 }
 

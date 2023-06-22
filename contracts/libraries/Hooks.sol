@@ -4,6 +4,8 @@ pragma solidity ^0.8.19;
 import {IHooks} from "../interfaces/IHooks.sol";
 import {Fees} from "../libraries/Fees.sol";
 
+//todo: comments here
+
 /// @notice V4 decides whether to invoke specific hooks by inspecting the leading bits of the address that
 /// the hooks contract is deployed to.
 /// For example, a hooks contract deployed to address: 0x9000000000000000000000000000000000000000
